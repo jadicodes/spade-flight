@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cswj27dj3xyev" path="res://spade/spade.tscn" id="1_xml0d"]
 [ext_resource type="PackedScene" uid="uid://cio2ra0omlt5s" path="res://pipes/pipes.tscn" id="2_3ejts"]
 [ext_resource type="PackedScene" uid="uid://l1tvam4jfis4" path="res://hud/hud.tscn" id="4_hwyhu"]
-[ext_resource type="Shader" path="res://world/repeat.gdshader" id="5_puu3d"]
+[ext_resource type="Shader" path="res://common/repeat.gdshader" id="5_puu3d"]
 [ext_resource type="Texture2D" uid="uid://bxpypjd2gcop7" path="res://common/background.png" id="6_xufhp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l1l66"]

@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://rcksxi5cyv23"]
+[gd_scene load_steps=6 format=3 uid="uid://rcksxi5cyv23"]
 
-[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_l226x"]
+[ext_resource type="Script" path="res://ui_screens/main_menu/main_menu.gd" id="1_l226x"]
+[ext_resource type="Shader" path="res://common/repeat.gdshader" id="2_48hfs"]
 [ext_resource type="Texture2D" uid="uid://bxpypjd2gcop7" path="res://common/background.png" id="2_nekup"]
 [ext_resource type="Theme" uid="uid://c2c6ex86ggxtl" path="res://common/font.tres" id="2_ygwu1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kymgh"]
+shader = ExtResource("2_48hfs")
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_l226x")
 
 [node name="Background" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kymgh")
 position = Vector2(160, 90)
 texture = ExtResource("2_nekup")
 

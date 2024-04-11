@@ -17,4 +17,4 @@ func _on_off_screen_notifier_screen_exited():
 
 func _on_scorer_body_entered(_body):
 	add_to_score.emit()
-	
+	$SuccessSound.play()

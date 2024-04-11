@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cswj27dj3xyev"]
+[gd_scene load_steps=8 format=3 uid="uid://cswj27dj3xyev"]
 
 [ext_resource type="Script" path="res://spade/spade.gd" id="1_o6ve1"]
 [ext_resource type="Texture2D" uid="uid://unt0htntvhi2" path="res://spade/spade.png" id="2_7mvqd"]
+[ext_resource type="AudioStream" uid="uid://552ireyrbdnb" path="res://spade/jump.wav" id="3_bo4no"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_psfm0"]
 radius = 13.0384
@@ -60,3 +61,6 @@ shape = SubResource("CircleShape2D_psfm0")
 libraries = {
 "": SubResource("AnimationLibrary_b5n2s")
 }
+
+[node name="FlapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bo4no")
