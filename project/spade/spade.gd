@@ -24,4 +24,4 @@ func _physics_process(delta):
 		_kill()
 
 func _kill():
-	get_tree().change_scene_to_file("res://ui_screens/end_screen.tscn")
+	get_tree().change_scene_to_file("res://ui_screens/end_screen/end_screen.tscn")

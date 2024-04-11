@@ -32,6 +32,15 @@ autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("4_hwyhu")]
 z_index = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 45.0
+offset_top = -2.0
+offset_right = 273.0
+offset_bottom = -2.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="SpadeCatcher" type="StaticBody2D" parent="."]
 collision_layer = 2

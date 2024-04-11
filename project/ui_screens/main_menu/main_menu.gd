@@ -1,5 +1,7 @@
 extends Node2D
 
+func _ready():
+	Jukebox.play_music()
 
 
 func _on_play_button_pressed():
