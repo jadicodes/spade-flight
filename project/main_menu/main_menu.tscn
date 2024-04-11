@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://rcksxi5cyv23"]
+[gd_scene load_steps=4 format=3 uid="uid://rcksxi5cyv23"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_l226x"]
+[ext_resource type="Texture2D" uid="uid://bxpypjd2gcop7" path="res://common/background.png" id="2_nekup"]
 [ext_resource type="Theme" uid="uid://c2c6ex86ggxtl" path="res://common/font.tres" id="2_ygwu1"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_l226x")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 327.0
-offset_bottom = 190.0
-color = Color(0.670588, 0.27451, 0.27451, 1)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("2_nekup")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 32.0
