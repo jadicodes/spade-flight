@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c2c6ex86ggxtl"]
+
+[ext_resource type="FontFile" uid="uid://b5fykdjih1evw" path="res://common/kenpixel_square.ttf" id="1_nqujo"]
+
+[resource]
+default_font = ExtResource("1_nqujo")
+default_font_size = 32

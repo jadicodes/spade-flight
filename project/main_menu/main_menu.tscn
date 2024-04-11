@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://rcksxi5cyv23"]
+
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_l226x"]
+[ext_resource type="Theme" uid="uid://c2c6ex86ggxtl" path="res://common/font.tres" id="2_ygwu1"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_l226x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 327.0
+offset_bottom = 190.0
+color = Color(0.670588, 0.27451, 0.27451, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 21.0
+offset_right = 292.0
+offset_bottom = 69.0
+theme = ExtResource("2_ygwu1")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "Spade Flight
+"
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 116.0
+offset_top = 73.0
+offset_right = 198.0
+offset_bottom = 117.0
+theme = ExtResource("2_ygwu1")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 116.0
+offset_top = 123.0
+offset_right = 198.0
+offset_bottom = 167.0
+theme = ExtResource("2_ygwu1")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cio2ra0omlt5s"]
+
+[ext_resource type="Script" path="res://pipes/pipes.gd" id="1_xcb4o"]
+[ext_resource type="Texture2D" uid="uid://c5soioal66uyo" path="res://pipes/pipe.png" id="2_00ab2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8gtr"]
+size = Vector2(32, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbj4d"]
+size = Vector2(20, 86)
+
+[node name="Pipes" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_xcb4o")
+
+[node name="CollisionBottom" type="CollisionShape2D" parent="."]
+position = Vector2(340, 209)
+shape = SubResource("RectangleShape2D_r8gtr")
+
+[node name="CollisionBottom2" type="CollisionShape2D" parent="."]
+position = Vector2(337, -37)
+shape = SubResource("RectangleShape2D_r8gtr")
+
+[node name="BottomPipe" type="Sprite2D" parent="."]
+position = Vector2(339, 187)
+texture = ExtResource("2_00ab2")
+
+[node name="TopPipe2" type="Sprite2D" parent="."]
+position = Vector2(337, -16)
+texture = ExtResource("2_00ab2")
+flip_v = true
+
+[node name="OffScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(371, 38)
+scale = Vector2(1.3, 1)
+
+[node name="Scorer" type="Area2D" parent="."]
+
+[node name="ScorerDetector" type="CollisionShape2D" parent="Scorer"]
+position = Vector2(367, 80)
+shape = SubResource("RectangleShape2D_mbj4d")
+
+[connection signal="screen_exited" from="OffScreenNotifier" to="." method="_on_off_screen_notifier_screen_exited"]
+[connection signal="body_entered" from="Scorer" to="." method="_on_scorer_body_entered"]

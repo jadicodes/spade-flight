@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://55aum8msivu4"]
+
+[ext_resource type="Script" path="res://world/world.gd" id="1_svf66"]
+[ext_resource type="PackedScene" uid="uid://cswj27dj3xyev" path="res://spade/spade.tscn" id="1_xml0d"]
+[ext_resource type="PackedScene" uid="uid://cio2ra0omlt5s" path="res://pipes/pipes.tscn" id="2_3ejts"]
+[ext_resource type="PackedScene" uid="uid://l1tvam4jfis4" path="res://hud/hud.tscn" id="4_hwyhu"]
+[ext_resource type="Shader" path="res://world/repeat.gdshader" id="5_puu3d"]
+[ext_resource type="Texture2D" uid="uid://bxpypjd2gcop7" path="res://common/background.png" id="6_xufhp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1l66"]
+shader = ExtResource("5_puu3d")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh41l"]
+size = Vector2(341, 20)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_svf66")
+pipes_scene = ExtResource("2_3ejts")
+
+[node name="Background" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_l1l66")
+position = Vector2(160, 90)
+texture = ExtResource("6_xufhp")
+
+[node name="Spade" parent="." instance=ExtResource("1_xml0d")]
+position = Vector2(24, 87)
+rotation = 1.5708
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("4_hwyhu")]
+z_index = 2
+
+[node name="SpadeCatcher" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionTop" type="CollisionShape2D" parent="SpadeCatcher"]
+position = Vector2(161, -55)
+shape = SubResource("RectangleShape2D_dh41l")
+
+[node name="CollisionBottom" type="CollisionShape2D" parent="SpadeCatcher"]
+position = Vector2(160, 236)
+shape = SubResource("RectangleShape2D_dh41l")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
