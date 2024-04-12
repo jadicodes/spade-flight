@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var _has_collided = false
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -23,5 +23,5 @@ func _physics_process(delta):
 		_kill()
 
 
-func _kill():
+func _kill() -> void:
 	get_tree().change_scene_to_file("res://ui_screens/end_screen/end_screen.tscn")
