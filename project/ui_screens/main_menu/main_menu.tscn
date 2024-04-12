@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rcksxi5cyv23"]
+[gd_scene load_steps=11 format=3 uid="uid://rcksxi5cyv23"]
 
 [ext_resource type="Script" path="res://ui_screens/main_menu/main_menu.gd" id="1_l226x"]
 [ext_resource type="Shader" path="res://common/repeat.gdshader" id="2_48hfs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d4nrp5dmcu1oj" path="res://common/buttons/button_black.png" id="6_rr2ln"]
 [ext_resource type="Texture2D" uid="uid://buh1c0fab7jm1" path="res://common/buttons/button_blue.png" id="7_1vdv8"]
 [ext_resource type="Texture2D" uid="uid://dty7l8h42wysp" path="res://common/buttons/button_red.png" id="8_s8et0"]
+[ext_resource type="Texture2D" uid="uid://unt0htntvhi2" path="res://spade/spade.png" id="9_202ln"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kymgh"]
 shader = ExtResource("2_48hfs")
@@ -83,5 +84,84 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Quit"
 
+[node name="CreditsButton" type="TextureButton" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 282.0
+offset_top = 143.0
+offset_right = 314.0
+offset_bottom = 175.0
+grow_horizontal = 2
+texture_normal = ExtResource("9_202ln")
+
+[node name="Label" type="Label" parent="CreditsButton"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+theme = ExtResource("2_ygwu1")
+theme_override_font_sizes/font_size = 8
+text = "Credits"
+
+[node name="CreditsBackground" type="ColorRect" parent="."]
+visible = false
+offset_top = -1.0
+offset_right = 321.0
+offset_bottom = 181.0
+color = Color(0.560784, 0.607843, 0.964706, 1)
+
+[node name="Title" type="Label" parent="CreditsBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 6.0
+offset_right = 40.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme = ExtResource("2_ygwu1")
+theme_override_font_sizes/font_size = 16
+text = "Credits"
+
+[node name="Credits" type="Label" parent="CreditsBackground"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 34.0
+offset_right = 303.0
+offset_bottom = 139.0
+theme = ExtResource("2_ygwu1")
+theme_override_font_sizes/font_size = 16
+text = "Developer: Jadi Miller
+Font: Kenney.nl
+Music: \"Background Music (LOOP)\" by Alex McColloch"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="OKButton" type="TextureButton" parent="CreditsBackground"]
+offset_left = 144.0
+offset_top = 143.0
+offset_right = 184.0
+offset_bottom = 183.0
+texture_normal = ExtResource("9_202ln")
+
+[node name="Label" type="Label" parent="CreditsBackground/OKButton"]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 50.0
+offset_bottom = 31.0
+theme = ExtResource("2_ygwu1")
+theme_override_font_sizes/font_size = 8
+text = "OK"
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CreditsBackground/OKButton" to="." method="_on_ok_button_pressed"]

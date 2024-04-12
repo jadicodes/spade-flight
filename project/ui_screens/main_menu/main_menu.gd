@@ -12,3 +12,11 @@ func _on_play_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	Jukebox.play_click()
 	get_tree().quit()
+
+
+func _on_credits_button_pressed():
+	$CreditsBackground.show()
+
+
+func _on_ok_button_pressed():
+	$CreditsBackground.hide()
