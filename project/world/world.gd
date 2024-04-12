@@ -3,6 +3,7 @@ extends Node2D
 var _game_started = false
 
 @export var pipes_scene: PackedScene
+
 @onready var hud_scene = get_node("HUD")
 
 

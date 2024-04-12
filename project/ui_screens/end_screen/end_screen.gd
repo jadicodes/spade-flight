@@ -2,6 +2,7 @@ extends Node2D
 
 var _score: int
 
+
 func _ready() -> void:
 	Jukebox.play_explosion()
 	_set_score_label()

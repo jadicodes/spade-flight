@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rcksxi5cyv23"]
+[gd_scene load_steps=10 format=3 uid="uid://rcksxi5cyv23"]
 
 [ext_resource type="Script" path="res://ui_screens/main_menu/main_menu.gd" id="1_l226x"]
 [ext_resource type="Shader" path="res://common/repeat.gdshader" id="2_48hfs"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ce3qfvh5kuupm" path="res://common/buttons/button_white.png" id="5_xgxyl"]
 [ext_resource type="Texture2D" uid="uid://d4nrp5dmcu1oj" path="res://common/buttons/button_black.png" id="6_rr2ln"]
 [ext_resource type="Texture2D" uid="uid://buh1c0fab7jm1" path="res://common/buttons/button_blue.png" id="7_1vdv8"]
-[ext_resource type="Texture2D" uid="uid://dty7l8h42wysp" path="res://common/buttons/button_red.png" id="8_s8et0"]
 [ext_resource type="Texture2D" uid="uid://unt0htntvhi2" path="res://spade/spade.png" id="9_202ln"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kymgh"]
@@ -23,9 +22,9 @@ texture = ExtResource("2_nekup")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 32.0
-offset_top = 11.0
+offset_top = 28.0
 offset_right = 292.0
-offset_bottom = 59.0
+offset_bottom = 76.0
 theme = ExtResource("2_ygwu1")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
@@ -34,9 +33,9 @@ text = "Spade Flight
 
 [node name="PlayButton" type="TextureButton" parent="."]
 offset_left = 96.0
-offset_top = 71.0
+offset_top = 100.0
 offset_right = 224.0
-offset_bottom = 119.0
+offset_bottom = 148.0
 theme = ExtResource("2_ygwu1")
 texture_normal = ExtResource("5_xgxyl")
 texture_pressed = ExtResource("6_rr2ln")
@@ -57,32 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Play"
-
-[node name="QuitButton" type="TextureButton" parent="."]
-offset_left = 96.0
-offset_top = 121.0
-offset_right = 224.0
-offset_bottom = 169.0
-theme = ExtResource("2_ygwu1")
-texture_normal = ExtResource("5_xgxyl")
-texture_pressed = ExtResource("6_rr2ln")
-texture_hover = ExtResource("8_s8et0")
-
-[node name="Label" type="Label" parent="QuitButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = -26.0
-offset_right = 44.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Quit"
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 anchors_preset = 5
@@ -164,6 +137,5 @@ theme_override_font_sizes/font_size = 8
 text = "OK"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CreditsBackground/OKButton" to="." method="_on_ok_button_pressed"]
