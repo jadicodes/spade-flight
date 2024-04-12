@@ -146,6 +146,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="OKButton" type="TextureButton" parent="CreditsBackground"]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 143.0
 offset_right = 184.0
@@ -153,6 +154,7 @@ offset_bottom = 183.0
 texture_normal = ExtResource("9_202ln")
 
 [node name="Label" type="Label" parent="CreditsBackground/OKButton"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 8.0
 offset_right = 50.0
