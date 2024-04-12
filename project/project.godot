@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Jukebox="*res://common/jukebox/jukebox.tscn"
+Score="*res://common/score.tscn"
 
 [display]
 

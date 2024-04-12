@@ -1,7 +1,7 @@
 extends Control
 
-var _score: int
 
 func _update_score() -> void:
-	_score += 1
+	Score.increase_score()
+	var _score = Score.return_score()
 	$Score.text = str(_score)

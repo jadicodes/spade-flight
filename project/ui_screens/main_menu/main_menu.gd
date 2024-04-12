@@ -5,6 +5,7 @@ func _ready():
 
 
 func _on_play_button_pressed() -> void:
+	Score.reset_score()
 	Jukebox.play_click()
 	get_tree().change_scene_to_file("res://world/world.tscn")
 
