@@ -13,5 +13,5 @@ func _on_spawn_timer_timeout():
 
 
 func _generate_pipe_y():
-	var _pipe_y: int = randi_range(-50, 50)
+	var _pipe_y: int = randi_range(-40, 40)
 	return _pipe_y
