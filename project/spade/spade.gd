@@ -4,7 +4,6 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -185.0
 
-var _has_collided = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
@@ -17,11 +16,4 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		$FlapSound.play()
 
-
-	_has_collided = move_and_collide(velocity * delta)
-	
-	if _has_collided:
-		_kill()
-
-func _kill():
-	get_tree().change_scene_to_file("res://ui_screens/end_screen/end_screen.tscn")
+	move_and_collide(velocity * delta)
