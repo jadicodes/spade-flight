@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkno0wo1tgqhg"]
+[gd_scene load_steps=10 format=3 uid="uid://dkno0wo1tgqhg"]
 
 [ext_resource type="Script" path="res://ui_screens/end_screen/end_screen.gd" id="1_yqjgq"]
 [ext_resource type="Texture2D" uid="uid://bxpypjd2gcop7" path="res://common/background.png" id="2_erc3i"]
 [ext_resource type="Shader" path="res://common/repeat.gdshader" id="2_uak64"]
 [ext_resource type="Theme" uid="uid://c2c6ex86ggxtl" path="res://common/font.tres" id="2_y3bxl"]
 [ext_resource type="Texture2D" uid="uid://ce3qfvh5kuupm" path="res://common/buttons/button_white.png" id="3_abmm5"]
-[ext_resource type="AudioStream" uid="uid://hmf7repb2upp" path="res://ui_screens/end_screen/explosion.wav" id="3_vgoiv"]
 [ext_resource type="Texture2D" uid="uid://d4nrp5dmcu1oj" path="res://common/buttons/button_black.png" id="4_3nydm"]
 [ext_resource type="Texture2D" uid="uid://buh1c0fab7jm1" path="res://common/buttons/button_blue.png" id="5_i2kt6"]
 [ext_resource type="Texture2D" uid="uid://dty7l8h42wysp" path="res://common/buttons/button_red.png" id="7_xc712"]
@@ -66,9 +65,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Play"
-
-[node name="EndSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_vgoiv")
 
 [node name="MenuButton" type="TextureButton" parent="."]
 offset_left = 102.0

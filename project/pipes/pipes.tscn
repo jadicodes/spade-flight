@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cio2ra0omlt5s"]
+[gd_scene load_steps=6 format=3 uid="uid://cio2ra0omlt5s"]
 
 [ext_resource type="Script" path="res://pipes/pipes.gd" id="1_xcb4o"]
 [ext_resource type="Texture2D" uid="uid://5au68rcytaug" path="res://pipes/king_pipe.png" id="2_xkdpn"]
-[ext_resource type="AudioStream" uid="uid://85yp5uqsidax" path="res://pipes/success.wav" id="3_5xhj3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwpkp"]
 radius = 15.0
@@ -45,9 +44,6 @@ scale = Vector2(1.3, 1)
 [node name="ScorerDetector" type="CollisionShape2D" parent="Scorer"]
 position = Vector2(362, 98)
 shape = SubResource("RectangleShape2D_mbj4d")
-
-[node name="SuccessSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_5xhj3")
 
 [connection signal="screen_exited" from="OffScreenNotifier" to="." method="_on_off_screen_notifier_screen_exited"]
 [connection signal="body_entered" from="Scorer" to="." method="_on_scorer_body_entered"]

@@ -5,10 +5,10 @@ func _ready():
 
 
 func _on_play_button_pressed():
-	Jukebox._play_click()
+	Jukebox.play_click()
 	get_tree().change_scene_to_file("res://world/world.tscn")
 
 
 func _on_quit_button_pressed():
-	Jukebox._play_click()
+	Jukebox.play_click()
 	get_tree().quit()

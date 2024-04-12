@@ -15,7 +15,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP_VELOCITY
-		$FlapSound.play()
+		Jukebox.play_flap()
 
 	_has_collided = move_and_collide(velocity * delta)
 	

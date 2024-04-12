@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://by12ljsribed8"]
+[gd_scene load_steps=7 format=3 uid="uid://by12ljsribed8"]
 
 [ext_resource type="Script" path="res://common/jukebox/jukebox.gd" id="1_ccn71"]
 [ext_resource type="AudioStream" uid="uid://cwdnrn4kdgwpd" path="res://common/jukebox/background_music_loop.ogg" id="1_tlyvs"]
 [ext_resource type="AudioStream" uid="uid://bnv8yn7p0nr02" path="res://common/jukebox/click.wav" id="3_67a17"]
+[ext_resource type="AudioStream" uid="uid://552ireyrbdnb" path="res://common/jukebox/jump.wav" id="4_nea7l"]
+[ext_resource type="AudioStream" uid="uid://85yp5uqsidax" path="res://common/jukebox/success.wav" id="5_8y5xt"]
+[ext_resource type="AudioStream" uid="uid://hmf7repb2upp" path="res://common/jukebox/explosion.wav" id="6_j556k"]
 
 [node name="Jukebox" type="Control"]
 layout_mode = 3
@@ -19,3 +22,12 @@ volume_db = -10.0
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_67a17")
+
+[node name="FlapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nea7l")
+
+[node name="SuccessSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8y5xt")
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_j556k")
