@@ -1,48 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cswj27dj3xyev"]
+[gd_scene load_steps=5 format=3 uid="uid://cswj27dj3xyev"]
 
 [ext_resource type="Script" path="res://spade/spade.gd" id="1_o6ve1"]
 [ext_resource type="Texture2D" uid="uid://unt0htntvhi2" path="res://spade/spade.png" id="2_7mvqd"]
+[ext_resource type="Theme" uid="uid://c2c6ex86ggxtl" path="res://common/font.tres" id="3_obiej"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_psfm0"]
 radius = 13.0384
-
-[sub_resource type="Animation" id="Animation_ymo23"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_co75j"]
-resource_name = "rotate"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b5n2s"]
-_data = {
-"RESET": SubResource("Animation_ymo23"),
-"rotate": SubResource("Animation_co75j")
-}
 
 [node name="Spade" type="CharacterBody2D"]
 collision_layer = 3
@@ -56,7 +19,15 @@ texture = ExtResource("2_7mvqd")
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_psfm0")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_b5n2s")
-}
+[node name="SpaceLabel" type="Label" parent="."]
+visible = false
+offset_left = -12.0
+offset_top = -32.0
+offset_right = 214.0
+offset_bottom = -8.0
+rotation = 4.71239
+theme = ExtResource("3_obiej")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 16
+text = "Press space bar to fly"

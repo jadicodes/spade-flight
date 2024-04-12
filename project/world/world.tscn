@@ -54,4 +54,5 @@ shape = SubResource("RectangleShape2D_dh41l")
 position = Vector2(160, 236)
 shape = SubResource("RectangleShape2D_dh41l")
 
+[connection signal="game_started" from="Spade" to="." method="_on_spade_game_started"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
