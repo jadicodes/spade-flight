@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -185.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var _has_collided = false
 
 
 func _physics_process(delta):
@@ -16,4 +17,11 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		$FlapSound.play()
 
-	move_and_collide(velocity * delta)
+	_has_collided = move_and_collide(velocity * delta)
+	
+	if _has_collided:
+		_kill()
+
+
+func _kill():
+	get_tree().change_scene_to_file("res://ui_screens/end_screen/end_screen.tscn")
